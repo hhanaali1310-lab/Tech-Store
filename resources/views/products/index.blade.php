@@ -190,6 +190,33 @@
         transition: background 0.15s ease;
     }
     .pv-cart-btn:hover { background: var(--accent-dark); color: #fff; }
+    
+    .bs-filters {
+        max-width: 1200px;
+        margin: 0 auto 1.5rem;
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .bs-pill {
+        font-family: 'Google Sans Flex', monospace;
+        font-size: 0.78rem;
+        padding: 0.45rem 0.9rem;
+        border-radius: 20px;
+        border: 1px solid var(--line);
+        background: #fff;
+        color: var(--muted);
+        cursor: pointer;
+        transition: all 0.15s ease;
+    }
+    .bs-pill.active,
+    .bs-pill:hover {
+        background: var(--ink);
+        color: #fff;
+        border-color: var(--ink);
+    }
 </style>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -214,7 +241,12 @@
     @if (session('success'))
         <div class="pv-flash">{{ session('success') }}</div>
     @endif
-
+    <div class="bs-filters">
+        <button class="bs-pill active" data-filter="all">All Devices</button>
+        <button class="bs-pill" data-filter="Smartphones">Smartphones</button>
+        <button class="bs-pill" data-filter="headphones">Headphones</button>
+        <button class="bs-pill" data-filter="laptops">Laptops</button>
+    </div>
     <div class="pv-grid">
         @foreach ($products as $product)
             <div class="pv-card">

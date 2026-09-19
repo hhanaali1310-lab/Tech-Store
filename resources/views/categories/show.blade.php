@@ -94,29 +94,27 @@
         font-family: 'Google Sans Flex', sans-serif;
         font-weight: 600;
         font-size: 0.85rem;
-        background: #FBF3E6;
+        background: #fff;
         color: var(--amber);
-        border: 1px solid #ECD5A8;
+        border: 1px solid #ffffff;
         padding: 0.6rem 1.2rem;
         border-radius: 8px;
         text-decoration: none;
         transition: background 0.15s ease;
     }
-    .cat-btn-warning:hover { background: #F5E6C8; }
 
     .cat-btn-danger {
         font-family: 'Google Sans Flex', sans-serif;
-        font-weight: 600;
         font-size: 0.85rem;
         cursor: pointer;
         padding: 0.6rem 1.2rem;
         border-radius: 8px;
-        border: 1px solid #F0C9C2;
+        border: 1px solid #fff;
         color: var(--danger);
-        background: #FCEEEC;
+        font-weight: 600;
+        background: #fff;
         transition: background 0.15s ease;
     }
-    .cat-btn-danger:hover { background: #F9DCD6; }
 
     .cat-section-title {
         font-family: 'Google Sans Flex', sans-serif;
@@ -167,6 +165,24 @@
         border-radius: 8px;
         font-size: 0.9rem;
     }
+    .ct-img,
+.ct-img-placeholder {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    background: var(--paper);
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.ct-img-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.55rem;
+    color: var(--muted);
+    text-align: center;
+}
 </style>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -189,7 +205,7 @@
                      class="cat-hero-img">
             @else
                 <div class="cat-hero-placeholder">
-                    <span>💻</span>
+                    <span></span>
                 </div>
             @endif
 
@@ -242,6 +258,11 @@
 
                 <div class="cat-product-card">
 
+                     @if ($product->image)
+                            <img class="ct-img" src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}">
+                        @else
+                            <div class="ct-img-placeholder">NO IMAGE</div>
+                        @endif 
                     <h5 class="cat-product-name">
                         {{ $product->name }}
                     </h5>

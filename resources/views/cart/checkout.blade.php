@@ -108,7 +108,7 @@
 <div class="co-container">
 
     <div class="co-eyebrow">Almost There</div>
-    <h1>🧾 Checkout</h1>
+    <h1>Checkout</h1>
 
     <form action="/place-order" method="POST">
         @csrf
@@ -122,7 +122,7 @@
         <button type="submit">Place Order</button>
     </form>
 
-    <p class="co-note">Cash on Delivery available 💰</p>
+    <p class="co-note">Cash on Delivery available</p>
 
 </div>
 

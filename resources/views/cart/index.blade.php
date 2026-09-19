@@ -153,6 +153,60 @@
             color: var(--muted);
             margin-top: 3rem;
         }
+        .ct-qty {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    overflow: hidden;
+    background: #fff;
+}
+
+.ct-qty-btn {
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #333;
+    text-decoration: none;
+    user-select: none;
+    transition: background 0.15s;
+}
+
+.ct-qty-btn:hover {
+    background: #f3f4f6;
+}
+
+.ct-qty-value {
+    min-width: 40px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    border-left: 1px solid #d1d5db;
+    border-right: 1px solid #d1d5db;
+}
+.ct-img,
+.ct-img-placeholder {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    background: var(--paper);
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.ct-img-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.55rem;
+    color: var(--muted);
+    text-align: center;
+}
     </style>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -164,7 +218,7 @@
 
             <div class="ct-header">
                 <div class="ct-eyebrow">Your Selections</div>
-                <h1>🛒 My Cart</h1>
+                <h1>My Cart</h1>
             </div>
 
             @if($cart->items->isEmpty())
@@ -184,9 +238,14 @@
                     @endphp
 
                     <div class="ct-card">
-
+                        @if ($item->product->image)
+                            <img class="ct-img" src="{{ asset('storage/' . $item->product->image) }}" alt="{{ $item->product->name }}">
+                        @else
+                            <div class="ct-img-placeholder">NO IMAGE</div>
+                        @endif    
                         <div class="ct-info">
 
+                                               
                             <h3>
                                 {{ $item->product->name }}
                             </h3>
@@ -195,33 +254,19 @@
                                 Price: {{ $item->product->price }} EGP
                             </p>
 
-                            <p class="ct-qty">
-                                Qty: {{ $item->quantity }}
-                            </p>
-
                         </div>
 
                         <div class="ct-actions">
+    <div class="ct-qty">
+<a class="ct-qty-btn"
+           href="{{ url('/cart/decrease/' . $item->product_id) }}">−</a>
 
-                            <a
-                                class="ct-plus"
-                                href="{{ url('/cart/increase/' . $item->product_id) }}">
-                                +
-                            </a>
+        <span class="ct-qty-value">{{ $item->quantity }}</span>
 
-                            <a
-                                class="ct-minus"
-                                href="{{ url('/cart/decrease/' . $item->product_id) }}">
-                                -
-                            </a>
-
-                            <a
-                                class="ct-delete"
-                                href="{{ url('/cart/delete/' . $item->product_id) }}">
-                                ✖
-                            </a>
-
-                        </div>
+        <a class="ct-qty-btn"
+           href="{{ url('/cart/increase/' . $item->product_id) }}">+</a>
+    </div>
+</div>
 
                     </div>
 

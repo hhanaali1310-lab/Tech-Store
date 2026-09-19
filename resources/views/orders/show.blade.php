@@ -109,6 +109,11 @@
         border-radius: 10px;
         padding: 1.1rem 1.3rem;
         margin-bottom: 0.85rem;
+         display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
     }
     .ord-item-card p {
         margin: 0.3rem 0;
@@ -130,6 +135,24 @@
         font-size: 0.9rem;
         margin-bottom: 1rem;
     }
+    .ct-img,
+.ct-img-placeholder {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    background: var(--paper);
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.ct-img-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.55rem;
+    color: var(--muted);
+    text-align: center;
+}
 </style>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -196,8 +219,8 @@
                 <div class="ord-item-card">
 
                     <p>
-                        <strong>Product ID:</strong>
-                        {{ $item->prodact_id }}
+                        <strong>Product Name:</strong>
+                        {{ $item->product->name }}
                     </p>
 
                     <p>
@@ -209,7 +232,11 @@
                         <strong>Price:</strong>
                         ${{ $item->price }}
                     </p>
-
+                @if ($item->product->image)
+                            <img class="ct-img" src="{{ asset('storage/' . $item->product->image) }}" alt="{{ $item->product->name }}">
+                        @else
+                            <div class="ct-img-placeholder">NO IMAGE</div>
+                        @endif 
                 </div>
 
             @endforeach

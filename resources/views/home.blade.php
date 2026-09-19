@@ -125,13 +125,10 @@
                         <h1 class="fw-bold">TECH ESSENTIALS BUNDLE</h1>
                         <p class="text-secondary">Laptops, Mobiles &amp; Accessories — Everything You Need</p>
                         <a href="{{ url('/products') }}" class="btn btn-dark px-4 shop-btn">Shop Now</a>
-                       
-
-        
                     </div>
 
                     <div class="col-md-4 text-center d-none d-md-block">
-                        <img src="{{ asset('images/brands/1787845783.jpg') }}" alt="Model wearing headphones" class="slider-img">
+                        <img src="{{ asset('images/brands/1787845822-removebg-preview.png') }}" alt="Model wearing headphones" class="slider-img">
                     </div>
 
                 </div>
@@ -320,10 +317,10 @@
 
     @php
         $bestSellers = [
-            ['name' => 'iPhone 15 Pro',        'price' => 1099.00, 'stock' => 20, 'image' => 'OPPO .jpg',       'category' => 'smartphones'],
-            ['name' => 'MacBook Pro 14"',       'price' => 1999.00, 'stock' => 10, 'image' => '1787845783.jpg', 'category' => 'laptops'],
-            ['name' => 'AirPods Pro',           'price' => 249.00,  'stock' => 40, 'image' => '1787845794.jpg', 'category' => 'headphones'],
-            ['name' => 'Apple Watch Series 9',  'price' => 399.00,  'stock' => 25, 'image' => '1787845811.jpg', 'category' => 'smartphones'],
+            ['name' => 'iPhone 15',        'price' => 1099.00, 'stock' => 20, 'image' => 'Iphone 15.jpg',       'category' => 'smartphones'],
+            ['name' => 'Acer Aspire 14 AI Copilot',       'price' => 1999.00, 'stock' => 10, 'image' => '61kp09SeFyL._AC_SY300_SX300_QL70_FMwebp_.webp', 'category' => 'laptops'],
+            ['name' => 'AirPods Pro',           'price' => 249.00,  'stock' => 40, 'image' => 'AirPods_Pro_2nd-Gen-1.png', 'category' => 'headphones'],
+            ['name' => 'Samsung Galaxy S23 Ultra',  'price' => 399.00,  'stock' => 25, 'image' => '1787845794.jpg', 'category' => 'smartphones'],
         ];
     @endphp
 
@@ -469,7 +466,7 @@
                 <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="12" rx="2"/><path d="M6 20h12"/></svg>
             </div>
             <h3 class="fc-name">Laptops &amp; Mac</h3>
-            <p class="fc-desc">Ultrabooks and workstations for every workflow.</p>
+            <p class="fc-desc">Powerful laptops and Macs for work, study, and entertainment.</p>
         </a>
 
         <a href="{{ route('products.index') }}" class="fc-card">
@@ -477,7 +474,7 @@
                 <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg>
             </div>
             <h3 class="fc-name">Smartphones</h3>
-            <p class="fc-desc">The latest flagship and mid-range devices.</p>
+            <p class="fc-desc">Explore the latest smartphones for every budget and lifestyle.</p>
         </a>
 
         <a href="{{ route('products.index') }}" class="fc-card">
@@ -485,7 +482,7 @@
                 <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1v-6h3z"/><path d="M3 19a2 2 0 0 0 2 2h1v-6H3z"/></svg>
             </div>
             <h3 class="fc-name">Audio &amp; Acoustics</h3>
-            <p class="fc-desc">Headphones, earbuds, and speakers.</p>
+            <p class="fc-desc">Headphones, earbuds, and speakers for an immersive experience.</p>
         </a>
 
         <a href="{{ route('products.index') }}" class="fc-card">
@@ -493,7 +490,7 @@
                 <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg>
             </div>
             <h3 class="fc-name">Smart Accessories</h3>
-            <p class="fc-desc">Watches, hubs, and connected devices.</p>
+            <p class="fc-desc">Smartwatches, hubs, chargers, and essential tech accessories.</p>
         </a>
 
     </div>
