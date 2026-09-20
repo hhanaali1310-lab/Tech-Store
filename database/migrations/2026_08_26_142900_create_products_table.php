@@ -24,10 +24,7 @@ return new class extends Migration
                 ->constrained('categories')
                 ->cascadeOnDelete();
 
-            $table->foreignId('brand_id')
-                ->constrained('brands')
-                ->cascadeOnDelete();
-
+           
             $table->timestamps();
         });
     }
