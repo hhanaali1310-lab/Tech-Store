@@ -118,7 +118,7 @@
                 <div class="row align-items-center bg-light g-0 p-4 p-md-5">
 
                     <div class="col-md-4 text-center">
-                        <img src="{{ asset('images/brands/1787845794.jpg') }}" alt="Headphone" class="slider-img">
+                        <img src="{{ asset('images/brands/d7d79b63-5631-4460-8382-19a56091e839-removebg-preview.png') }}" alt="Headphone" class="slider-img">
                     </div>
 
                     <div class="col-md-4 text-center">
@@ -128,7 +128,7 @@
                     </div>
 
                     <div class="col-md-4 text-center d-none d-md-block">
-                        <img src="{{ asset('images/brands/1787845822-removebg-preview.png') }}" alt="Model wearing headphones" class="slider-img">
+                        <img src="{{ asset('images/brands/download__13_-removebg-preview.png') }}" alt="Model wearing headphones" class="slider-img">
                     </div>
 
                 </div>
@@ -318,9 +318,9 @@
     @php
         $bestSellers = [
             ['name' => 'iPhone 15',        'price' => 1099.00, 'stock' => 20, 'image' => 'Iphone 15.jpg',       'category' => 'smartphones'],
-            ['name' => 'Acer Aspire 14 AI Copilot',       'price' => 1999.00, 'stock' => 10, 'image' => '61kp09SeFyL._AC_SY300_SX300_QL70_FMwebp_.webp', 'category' => 'laptops'],
-            ['name' => 'AirPods Pro',           'price' => 249.00,  'stock' => 40, 'image' => 'AirPods_Pro_2nd-Gen-1.png', 'category' => 'headphones'],
-            ['name' => 'Samsung Galaxy S23 Ultra',  'price' => 399.00,  'stock' => 25, 'image' => '1787845794.jpg', 'category' => 'smartphones'],
+            ['name' => 'Acer Aspire 14 AI Copilot',       'price' => 4999.00, 'stock' => 10, 'image' => '61kp09SeFyL._AC_SY300_SX300_QL70_FMwebp_.webp', 'category' => 'laptops'],
+            ['name' => 'AirPods Pro',           'price' => 299.00,  'stock' => 50, 'image' => 'AirPods_Pro_2nd-Gen-1.png', 'category' => 'headphones'],
+            ['name' => 'Samsung Galaxy S23 Ultra',  'price' => 1499.00,  'stock' => 30, 'image' => '1787845794.jpg', 'category' => 'smartphones'],
         ];
     @endphp
 
@@ -588,7 +588,7 @@
     <div class="au-wrap">
 
         <div>
-            <img src="{{ asset('images/brands/1787845822.jpg') }}"
+            <img src="{{ asset('images/brands/1787845822-removebg-preview.png') }}"
                  alt="Store"
                  style="width:100%; border-radius:12px; aspect-ratio:4/3; object-fit:contain; background:#F4F6F8; padding:1rem;">
         </div>

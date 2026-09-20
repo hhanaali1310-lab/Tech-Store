@@ -218,7 +218,26 @@
         border-color: var(--ink);
     }
 </style>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const pills = document.querySelectorAll('.bs-pill');
+    const cards = document.querySelectorAll('.pv-card');
 
+    pills.forEach(pill => {
+        pill.addEventListener('click', () => {
+            pills.forEach(p => p.classList.remove('active'));
+            pill.classList.add('active');
+
+            const filter = pill.dataset.filter;
+
+            cards.forEach(card => {
+                const show = filter === 'all' || card.dataset.category === filter;
+                card.style.display = show ? '' : 'none';
+            });
+        });
+    });
+});
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&display=swap" rel="stylesheet">
@@ -242,14 +261,18 @@
         <div class="pv-flash">{{ session('success') }}</div>
     @endif
     <div class="bs-filters">
-        <button class="bs-pill active" data-filter="all">All Devices</button>
-        <button class="bs-pill" data-filter="Smartphones">Smartphones</button>
-        <button class="bs-pill" data-filter="headphones">Headphones</button>
-        <button class="bs-pill" data-filter="laptops">Laptops</button>
-    </div>
+    <button class="bs-pill active" data-filter="all">All Devices</button>
+
+    @foreach($categories as $category)
+        <button class="bs-pill" data-filter="{{ $category->id }}">
+            {{ $category->name }}
+        </button>
+    @endforeach
+</div>
+
     <div class="pv-grid">
         @foreach ($products as $product)
-            <div class="pv-card">
+            <div class="pv-card" data-category="{{ $product->category_id }}">
 
                 @if ($product->image)
                     <img class="pv-card-img" src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}">
@@ -262,7 +285,7 @@
 
                      <div class=" card-subtitle">${{ number_format($product['price'], 2) }}</div>
                     <div class=" card-text">{{ $product['stock'] }} in stock</div>
-
+                        
                     <div class="pv-card-actions">
                         <a href="{{ route('products.show', $product->id) }}" class="pv-link">View</a>
 

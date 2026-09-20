@@ -83,8 +83,10 @@ class ProductController extends Controller
      * Display the specified resource.
      */
     public function show(Product $product)
-    {
-        return view('products.show', compact('product'));
+    {        
+    $categories = Category::all();
+    $products   = Product::with('category')->get();
+    return view('products.show', compact('categories', 'product'));
     }
 
     /**
