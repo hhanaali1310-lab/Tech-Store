@@ -158,7 +158,6 @@
             </div>
 
             <div class="auth-field">
-                <label for="role">{{ __('Account Type') }}</label>
 
                 @error('role')
                     <span class="invalid-feedback" role="alert">
