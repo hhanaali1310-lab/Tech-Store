@@ -163,6 +163,11 @@
                 @if (Route::has('password.request'))
                     <a href="{{ route('password.request') }}">{{ __('Forgot Your Password?') }}</a>
                 @endif
+                    <div style="margin-top: 0.8rem;">
+                            <a href="{{ route('register') }}">
+                                {{ __('Sign Up') }}
+                            </a>
+                        </div>
             </div>
         </form>
 
