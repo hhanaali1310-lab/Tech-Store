@@ -159,10 +159,6 @@
 
             <div class="auth-field">
                 <label for="role">{{ __('Account Type') }}</label>
-                <select id="role" name="role" class="form-control @error('role') is-invalid @enderror" required>
-                    <option value="customer" {{ old('role') == 'customer' ? 'selected' : '' }}>Customer</option>
-                    <option value="admin" {{ old('role') == 'admin' ? 'selected' : '' }}>Admin</option>
-                </select>
 
                 @error('role')
                     <span class="invalid-feedback" role="alert">
